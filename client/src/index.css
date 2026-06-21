@@ -1,0 +1,302 @@
+:root {
+  color: #18202f;
+  background: #f4f6f8;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: #20293a;
+  color: #ffffff;
+  cursor: pointer;
+  min-height: 36px;
+  padding: 0 14px;
+}
+
+button:hover:not(:disabled) {
+  background: #0f766e;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+}
+
+input[type="color"] {
+  padding: 2px;
+  width: 52px;
+}
+
+.shell {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 24px;
+}
+
+.topBar,
+.sectionHead,
+.carMeta,
+.raceControls,
+.pagination,
+.tabs,
+.toolRow {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.topBar,
+.sectionHead {
+  justify-content: space-between;
+}
+
+.topBar {
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+.tabs a {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #18202f;
+  font-weight: 800;
+  padding: 10px 14px;
+  text-decoration: none;
+}
+
+.tabs a.active {
+  background: #f97316;
+  border-color: #f97316;
+  color: #111827;
+}
+
+.panel,
+.carRow,
+.winnersTable {
+  background: #ffffff;
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.toolRow {
+  flex-wrap: wrap;
+}
+
+.winnerBanner {
+  background: #f97316;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 16px 0;
+  padding: 16px;
+  text-align: center;
+}
+
+.garageList {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.carRow {
+  overflow: hidden;
+  padding: 12px;
+}
+
+.carMeta {
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.carMeta strong {
+  min-width: min(100%, 180px);
+  overflow-wrap: anywhere;
+}
+
+.track {
+  background:
+    linear-gradient(90deg, rgba(32, 41, 58, 0.08) 50%, transparent 50%) 0 100% / 34px 4px repeat-x,
+    linear-gradient(180deg, #eef2f7, #dde5ee);
+  border-radius: 8px;
+  min-height: 82px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carMover {
+  left: var(--drive-left, 8px);
+  position: absolute;
+  top: 18px;
+  transition: left var(--drive-time, 0ms) linear;
+  width: min(120px, 24vw);
+  z-index: 2;
+}
+
+.track.broken .carMover {
+  transition: none;
+}
+
+.finish {
+  border-left: 4px solid #ef4444;
+  color: #ef4444;
+  font-size: 0.72rem;
+  font-weight: 900;
+  height: 100%;
+  padding-left: 5px;
+  position: absolute;
+  right: 92px;
+  top: 0;
+  writing-mode: vertical-rl;
+}
+
+.carIcon {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.carIconSmall {
+  min-width: 70px;
+  width: 70px;
+}
+
+.pagination {
+  flex-wrap: wrap;
+}
+
+.pagination span {
+  color: #475569;
+  font-weight: 800;
+}
+
+.winnersTable {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 14px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.winnersTable th,
+.winnersTable td {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px;
+  text-align: left;
+}
+
+.winnersTable th {
+  background: #20293a;
+  color: #ffffff;
+}
+
+.winnersTable th button {
+  background: transparent;
+  font-weight: 900;
+  padding: 0;
+}
+
+.empty {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 24px 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .shell {
+    padding: 16px;
+  }
+
+  .topBar,
+  .sectionHead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolRow input[type="text"],
+  .toolRow input:not([type]) {
+    width: 100%;
+  }
+
+  .finish {
+    right: 58px;
+  }
+
+  .winnersTable {
+    font-size: 0.85rem;
+  }
+
+  .winnersTable th,
+  .winnersTable td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .carMover {
+    width: 84px;
+  }
+
+  .finish {
+    right: 48px;
+  }
+
+  button {
+    padding: 0 10px;
+  }
+}
