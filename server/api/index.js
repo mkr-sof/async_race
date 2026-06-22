@@ -111,4 +111,6 @@ server.patch('/engine', (req, res) => {
 });
 
 server.use(router);
-module.exports = server;
+module.exports = (req, res) => {
+    server(req, res);
+};
