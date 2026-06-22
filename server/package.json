@@ -2,13 +2,13 @@
   "name": "async-race-api",
   "version": "1.0.0",
   "description": "Fun with promises",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node api/index.js"
   },
   "author": "mikhama",
   "license": "MIT",
   "dependencies": {
-    "json-server": "^1.0.0-beta.15"
+    "json-server": "^0.17.4"
   }
 }
